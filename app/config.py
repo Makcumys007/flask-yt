@@ -1,7 +1,7 @@
 import os
 class Config(object):
-    USER = os.environ.get('POSTGRES_USER')
-    PASSWORD = os.environ.get('POSTGRES_PASSWORD')
+    USER = os.environ.get('POSTGRES_USER', 'user')
+    PASSWORD = os.environ.get('POSTGRES_PASSWORD', 'password')
     HOST = os.environ.get('POSTGRES_HOST')
     PORT = os.environ.get('POSTGRES_PORT')
     DB = os.environ.get('POSTGRES_DB')
