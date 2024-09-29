@@ -1,12 +1,11 @@
 from flask import Flask
 from .extensions import db
+from .config import Config
 
-def create_app():
+def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}"    
-    app.config['SECRET_KEY'] = 'KWBDoypJ}1WV6AkKbe]LLqz+YgGnq?UND?qE8eYtggNq>y4^Xdo_qcJC2CGxoBUMny1?oRcgHT1Md)vV>FqWo7QnC=8BjxT7g'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True 
-   # app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///project.db'
+    app.config.from_object(config_class)
+    
     db.init_app(app)
     
     with app.app_context():
