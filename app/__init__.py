@@ -1,5 +1,5 @@
 from flask import Flask
-from .extentions import db
+from .extensions import db
 
 def create_app():
     app = Flask(__name__)
