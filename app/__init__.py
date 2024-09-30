@@ -1,7 +1,7 @@
 from flask import Flask
 from .extensions import db
 from .config import Config
-from .routes import user
+from .routes.routes import user
 
 def create_app(config_class=Config):
     app = Flask(__name__)
