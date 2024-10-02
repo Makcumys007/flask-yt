@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>{% block title %} {% endblock %}</title>
 <!-- Additional metadata, stylesheets, or scripts can be included here -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<title>{% block title %} {% endblock %}</title>
+
 </head>
 <body>
     {% block content %} {% endblock %}
