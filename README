@@ -1,0 +1,5 @@
+pip freeze > requirements.txt
+pip list
+clear
+flask run
+flask db init
