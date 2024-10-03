@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Monserrat';
+    font-style: normal;
+    font-weight: 600;
+    src: ulr('../fonts/Monserrat/Montserrat-Bold.ttf'
+}
+
+@font-face {
+    font-family: 'Monserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: ulr('../fonts/Monserrat/Montserrat-Regular.ttf'
+}
