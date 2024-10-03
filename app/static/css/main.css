@@ -1,8 +1,27 @@
 @import url('fonts.css');
 
 body {
-    background: #fff;
-    color: #000;
+    background-color: RGBA(var(--bs-dark-rgb),var(--bs-bg-opacity,1)) !important;
+    color: #fff;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}
+
+.page {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1 1 auto;
 }
 
 .header_img {

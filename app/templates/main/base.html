@@ -9,16 +9,14 @@
 
 </head>
 <body>
-    <div class="page">
-        <header>
+    <!-- Header -->
             {% include 'main/__header.html' %}
-        </header>
-        <main>
+    <div class="page">
+        <main class="content">
             {% block content %} {% endblock %}
         </main>
-        <footer>
-
-        </footer>
+        <!-- Footer -->
+            {% include 'main/__footer.html' %}
     </div>
 </body>
 <script src="{{ url_for('static', filename='js/libs/bootstrap.min.js') }}"></script>
