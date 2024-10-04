@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Create post
+{% endblock %}
+
+
+{% block content %}
+
+<form class="form-control" method="post">
+    <input type="text" name="teacher"  placeholder="Full name of teacher">
+    <input type="text" name="subject" placeholder="Subject">
+    <input type="text" name="student" placeholder="Student">
+    <input type="date" name="date">
+    <input class="btn btn-success" type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
