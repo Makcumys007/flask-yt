@@ -7,8 +7,9 @@ from app.models.post import Post
 post = Blueprint('post', __name__)
 
 @post.route('/')
-def index():
-    return render_template('post/all.html')
+def all():
+    posts = Post.query.all()
+    return render_template('post/all.html', posts=posts)
 
 @post.route('/post/create', methods=['GET', 'POST'])
 def create():
