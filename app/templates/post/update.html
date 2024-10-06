@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Update post number {{ post.id }}
+{% endblock %}
+
+
+{% block content %}
+
+<form class="form-control d-flex flex-column gap-2" method="post">
+    <input value="{{ post.teacher }}" class="form-control" type="text" name="teacher"  placeholder="Full name of teacher">
+    <input value="{{ post.subject }}" class="form-control" type="text" name="subject" placeholder="Subject">
+    <input value="{{ post.student }}" class="form-control" type="text" name="student" placeholder="Student">
+    <input class="btn btn-success" type="submit" value="Submit">
+</form>
+
+
+{% endblock %}
