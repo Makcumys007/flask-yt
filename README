@@ -7,3 +7,20 @@ flask db init
 flask db migrate
 
 flask db upgrade
+
+
+
+----------------------
+
+Install GCC and other development tools:
+sudo apt-get install build-essential
+
+Install PostgreSQL Development Libraries:
+sudo apt-get install libpq-dev
+
+Install Python Development Headers:
+sudo apt-get install python3-dev
+
+Try installing psycopg2-binary again:
+pip3 install psycopg2-binary
+
