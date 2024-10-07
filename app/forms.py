@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, FileField
-from wtforms.validators import Length, DataRequired, FileAllowed, EqualTo
+from wtforms.validators import Length, DataRequired, EqualTo
+from flask_wtf.file import FileAllowed
 class RegistrationForm(FlaskForm):
     avatar = FileField('Avatar' , validators=[FileAllowed(['jpg', 'png'])])
     name = StringField('Name', validators=[DataRequired(), Length(min=2, max=20)])
