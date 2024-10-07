@@ -8,3 +8,4 @@ class User(db.Model):
     login = db.Column(db.String(50))
     password = db.Column(db.String(200))
     date = db.Column(db.DateTime, default=datetime.utcnow)
+    avatar = db.Column(db.String(200))
