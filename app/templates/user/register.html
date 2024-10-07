@@ -10,17 +10,17 @@ Registration
 <form method="post" enctype="application/x-www-form-urlencoded" class="form-control d-flex flex-column gap-2">
  
   {{form.csrf_token}}
-  {{form.name.label}}
-  {{form.name}}
-  {{form.login.label}}
-  {{form.login}}
-  {{form.avatar.label}}
-  {{form.avatar}}
-  {{form.password.label}}
-  {{form.password}}
-  {{form.confirm_password.label}}
-  {{form.confirm_password}}
-  {{form.submit}}
+  {{form.name.label(class="form-label")}}
+  {{form.name(class="form-control")}}
+  {{form.login.label(class="form-label")}}
+  {{form.login(class="form-control")}}
+  {{form.avatar.label(class="form-label")}}
+  {{form.avatar(class="form-control")}}
+  {{form.password.label(class="form-label")}}
+  {{form.password(class="form-control")}}
+  {{form.confirm_password.label(class="form-label")}}
+  {{form.confirm_password(class="form-control")}}
+  {{form.submit(class="btn btn-warning")}}
 
 </form>
         
