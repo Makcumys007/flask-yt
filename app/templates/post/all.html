@@ -24,8 +24,8 @@ Posts
           <td>{{ post.teacher }}</td>
           <td>{{ post.subject }}</td>
           <td>{{ post.student }}</td>
-          <td><a class="btn btn-sm btn-secondary" href="{{ url_for('post.update', id=post.id) }}">Update</a>
-          <a class="btn btn-sm btn-danger" href="{{ post.id }}">Delete</a></td>
+          <td><a class="btn btn-sm btn-secondary" href="{{ url_for('post.update', id=post.id) }}"><span class="fa fa-edit"></span></a>
+          <a class="btn btn-sm btn-danger" href="{{ post.id }}"><span class="fa fa-trash"></span></a></td>
         </tr>
     {% endfor %}
   </tbody>
