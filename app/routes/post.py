@@ -42,13 +42,27 @@ def update(id):
 
         try:
             db.session.commit()
-            print('post created')
+            print('post updated')
 
             return redirect('/')
         except Exception as e:
             print(str(e))
     else:
         return render_template('post/update.html', post=result)
+    
+
+@post.route('/post/<int:id>/delete', methods=['GET', 'POST'])
+def delete(id):
+    result = Post.query.get(id)   
+    try:
+        db.session.delete(result)
+        db.session.commit()
+        print('post deleted')
+
+        return redirect('/')
+    except Exception as e:
+        print(str(e))
+    
 
 
 
