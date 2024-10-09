@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, render_template, redirect, flash
 from app.functions import save_picture
 from ..extensions import db, bcrypt
 from app.models.user import User
@@ -15,8 +15,8 @@ def register():
         avatar_filename = save_picture(form.avatar.data)
         user = User(name=form.name.data, login=form.login.data, avatar=avatar_filename, password=hashed_password)
         db.session.add(user)
-        db.session.commit()
-        print('You are registered!')
+        db.session.commit()        
+        flash(f"You are registered!", "success")
         return redirect('/')
     else:
         print('Error of registration!')

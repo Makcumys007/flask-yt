@@ -11,21 +11,12 @@
 </head>
 <body>
     <!-- Header -->
-            {% include 'main/__header.html' %}
-    <!-- Flash message -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="alert alert-{{category}}">
-                    {{message}}
-                </div>
-            {% endfor %}
-        {5 endif %}
-    {# endwith %}
-    <!-- Flash message -->
+            {% include 'main/__header.html' %} 
     <div class="page">
         <main class="content">
             <h1>{{ self.title() }}</h1>
+            <!-- Flash message -->
+                {% include 'main/__flash.html' %}
             {% block content %} {% endblock %}
         </main>
         <!-- Footer -->
