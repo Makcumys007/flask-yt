@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, FileField, ValidationError
+from wtforms import BooleanField, StringField, PasswordField, SubmitField, FileField, ValidationError
 from wtforms.validators import Length, DataRequired, EqualTo
 from flask_wtf.file import FileAllowed
 
@@ -19,5 +19,11 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('This login is exist. You should use another login!')
         
-
+class LoginForm(FlaskForm):
+    """Form to log in users"""
+    login = StringField('Login', validators=[DataRequired(), Length(min=2, max=20)])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember me')
+    submit = SubmitField('Log in')
+        
         
