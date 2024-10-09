@@ -13,6 +13,13 @@ Registration
   {{form.name.label(class="form-label")}}
   {{form.name(class="form-control")}}
   {{form.login.label(class="form-label")}}
+    {% if form.login.errors %}
+      <div class="invalid-feedback" style="display: block!important;">
+        {% for error in form.login.errors %}
+          <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
   {{form.login(class="form-control")}}
   {{form.avatar.label(class="form-label")}}
   {{form.avatar(class="form-control")}}
