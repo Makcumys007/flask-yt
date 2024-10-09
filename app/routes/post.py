@@ -1,5 +1,5 @@
 from crypt import methods
-
+from flask_login import login_required
 from flask import Blueprint, render_template, request, redirect
 from ..extensions import db
 from app.models.post import Post
@@ -12,6 +12,7 @@ def all():
     return render_template('post/all.html', posts=posts)
 
 @post.route('/post/create', methods=['GET', 'POST'])
+@login_required
 def create():
     if request.method == 'POST':
         teacher = request.form['teacher']
@@ -33,6 +34,7 @@ def create():
 
 
 @post.route('/post/<int:id>/update', methods=['GET', 'POST'])
+@login_required
 def update(id):
     result = Post.query.get(id)
     if request.method == 'POST':
@@ -52,6 +54,7 @@ def update(id):
     
 
 @post.route('/post/<int:id>/delete', methods=['GET', 'POST'])
+@login_required
 def delete(id):
     result = Post.query.get(id)   
     try:
