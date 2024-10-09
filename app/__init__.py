@@ -18,6 +18,7 @@ def create_app(config_class=Config):
     # Login Manager
     login_manager.login_view = 'user.login'
     login_manager.login_message = 'You can\'t get an access to this page. You should first log in!'
+    login_manager.login_message_category = 'info'
 
     with app.app_context():
         db.create_all()

@@ -15,7 +15,9 @@ Posts
       <th scope="col">Teacher</th>
       <th scope="col">Subject</th>
       <th scope="col">Student</th>
+      {% if current_user.is_authenticated %}
         <th scope="col">Actions</th>
+        {% endif %}
     </tr>
   </thead>
   <tbody>
@@ -24,8 +26,13 @@ Posts
           <td>{{ post.teacher }}</td>
           <td>{{ post.subject }}</td>
           <td>{{ post.student }}</td>
-          <td><a class="btn btn-sm btn-secondary" href="{{ url_for('post.update', id=post.id) }}"><span class="fa fa-edit"></span></a>
-          <a class="btn btn-sm btn-danger" href="{{ url_for('post.delete', id=post.id) }}"><span class="fa fa-trash"></span></a></td>
+          {% if current_user.is_authenticated %}
+          <td>
+       
+              <a class="btn btn-sm btn-secondary" href="{{ url_for('post.update', id=post.id) }}"><span class="fa fa-edit"></span></a>
+              <a class="btn btn-sm btn-danger" href="{{ url_for('post.delete', id=post.id) }}"><span class="fa fa-trash"></span></a>
+         
+        </td>   {% endif %}
         </tr>
     {% endfor %}
   </tbody>
