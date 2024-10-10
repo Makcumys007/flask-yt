@@ -43,11 +43,13 @@ def create():
 @login_required
 def update(id):
     result = Post.query.get(id)
+    form = StudentForm()
+    
+    form.student.choices = [(s.id, s.name) for s in User.query.filter_by(status='user')]
+    
     if request.method == 'POST':
-        result.teacher = request.form['teacher']
         result.subject = request.form.get('subject')
-        result.student = request.form.get('student')
-
+        result.student = request.form.get('student')        
         try:
             db.session.commit()
             print('post updated')
@@ -56,7 +58,7 @@ def update(id):
         except Exception as e:
             print(str(e))
     else:
-        return render_template('post/update.html', post=result)
+        return render_template('post/update.html', post=result, form=form)
     
 
 @post.route('/post/<int:id>/delete', methods=['GET', 'POST'])
