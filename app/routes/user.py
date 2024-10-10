@@ -13,7 +13,12 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        avatar_filename = save_picture(form.avatar.data)
+        if form.avatar.data:
+            avatar_filename = save_picture(form.avatar.data)
+        else:
+            # Handle the case where no data is provided
+            avatar_filename = None
+            print("No avatar data provided.")
         user = User(name=form.name.data, login=form.login.data, avatar=avatar_filename, password=hashed_password)
         try:
             db.session.add(user)

@@ -23,9 +23,15 @@ Posts
   <tbody>
     {% for post in posts %}
         <tr>
-          <td>{{ post.teacher }}</td>
+         
+          <td>{{ post.author.name }}</td>
           <td>{{ post.subject }}</td>
-          <td>{{ post.student }}</td>
+          <td>
+            {% with student = user.query.get(post.student) %}
+              {{student.name}}
+            {% endwith %}</td>
+
+
           {% if current_user.is_authenticated %}
           <td>
        
