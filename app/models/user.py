@@ -1,6 +1,7 @@
 from ..extensions import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
+from .post import Post
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -14,4 +15,5 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(200))
     date = db.Column(db.DateTime, default=datetime.utcnow)
     status = db.Column(db.String(50))
+    posts = db.relationship(Post, backref='author')
 
