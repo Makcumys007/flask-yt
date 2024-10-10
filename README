@@ -24,3 +24,5 @@ sudo apt-get install python3-dev
 Try installing psycopg2-binary again:
 pip3 install psycopg2-binary
 
+-------------------------------
+apt install gcc

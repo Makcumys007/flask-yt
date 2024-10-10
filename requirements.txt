@@ -23,6 +23,7 @@ pytz==2024.2
 setuptools==75.1.0
 SQLAlchemy==2.0.35
 typing_extensions==4.12.2
+uWSGI==2.0.27
 webassets==2.0
 Werkzeug==3.0.4
 WTForms==3.1.2
